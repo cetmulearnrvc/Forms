@@ -69,20 +69,22 @@
             font-size: 20px;
             font-weight: bolder;
             font-family: inherit;
-            
+
         }
+
         .box {
-    border: 2px solid blue;
-    padding: 15px;
-    margin-bottom: 5px;
-    margin-left: 500px;
-    margin-right: 500px;
-    background-color: #ab2ece;
-    border-radius: 5px;
-    color: beige;
-    border-radius: 0.5em;
-    border-width: 2pxpx;
-}
+            border: 2px solid blue;
+            padding: 15px;
+            margin-bottom: 5px;
+            margin-left: 500px;
+            margin-right: 500px;
+            background-color: #ab2ece;
+            border-radius: 5px;
+            color: beige;
+            border-radius: 0.5em;
+            border-width: 2pxpx;
+        }
+
         select {
             box-shadow: inset 1px 1px 3px #ccc;
             border-radius: 5px;
@@ -101,9 +103,11 @@
                 border-color: rgb(15, 75, 15);
             }
         }
-        h1{
-            box-sizing:border-box;
+
+        h1 {
+            box-sizing: border-box;
         }
+
         fieldset {
 
             border-radius: 1em;
@@ -134,8 +138,6 @@
             height: 1em;
             appearance: none;
         }
-
-
     </style>
 
     <script>
@@ -146,8 +148,10 @@
             let confirmPassword = document.getElementById("confirmPasswd").value;
             // let errorMessage = document.getElementById("error-message");
             // let successMessage = document.getElementById("success-message");
-
-            if (password !== confirmPassword) {
+            if (password.length < 8) {
+                alert("Password must be atleast 8 character");
+            }
+            else if (password !== confirmPassword) {
                 alert("Passwords do not match!");
             } else {
                 document.getElementById("myForm").reset();
@@ -158,9 +162,9 @@
     </script>
 
 
-    
-        <center class="box"> REGISTRATION FORM</center>
-    
+
+    <center class="box"> REGISTRATION FORM</center>
+
     <form id="myForm" method="post" onSubmit="validateForm(event)">
         <fieldset name="name">
             <legend><label for="name">
@@ -186,48 +190,48 @@
         </fieldset>
         <br>
 
-            <fieldset>
-                <legend><label for="age">Age</legend>
-         
-        <input type="number" id="age" required min="0" max="100"> </input></label>
-    </fieldset>
+        <fieldset>
+            <legend><label for="age">Age</legend>
+
+            <input type="number" id="age" required min="0" max="100"> </input></label>
+        </fieldset>
         <br>
         <fieldset>
             <legend><label for="addr">Address</legend>
-        
-        <textarea id="addr" required></textarea></label>
-    </fieldset>
+
+            <textarea id="addr" required></textarea></label>
+        </fieldset>
         <br>
 
         <fieldset>
-        <legend><label for="dob">Date of Birth </legend>
-        <input type="date" id="dob" value="dd-mm-yyyy" required> </input></label>
-    </fieldset>
+            <legend><label for="dob">Date of Birth </legend>
+            <input type="date" id="dob" value="dd-mm-yyyy" required> </input></label>
+        </fieldset>
         <br><br>
 
         <fieldset>
 
-        <legend><label for="gender">Gender </label></legend>
-    
-        <br>
-        <select required>
-            <option>--select</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Others</option>
-        </select>
-    </fieldset>
+            <legend><label for="gender">Gender </label></legend>
+
+            <br>
+            <select required>
+                <option>--select</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Others</option>
+            </select>
+        </fieldset>
         <br>
         <fieldset>
             <legend><label for="passwd" required>Password</legend>
-        <input type="password" id="passwd" required /></label>
-    </fieldset>
+            <input type="password" id="passwd" required /></label>
+        </fieldset>
         <br>
-    <fieldset>
+        <fieldset>
 
-        <legend><label for="confirmPasswd" required>Confirm Password</legend>
-        <input type="password" id="confirmPasswd" required /></label>
-    </fieldset>
+            <legend><label for="confirmPasswd" required>Confirm Password</legend>
+            <input type="password" id="confirmPasswd" required /></label>
+        </fieldset>
         <br>
 
         <button name="submit" value="Submit">Register</button>
